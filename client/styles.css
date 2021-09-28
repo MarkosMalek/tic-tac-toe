@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(136, 203, 171);
+  background: linear-gradient(
+    0deg,
+    rgba(136, 203, 171, 1) 0%,
+    rgba(0, 13, 60, 1) 100%
+  );
+  font-family: "Merriweather", serif;
+  color: #fff;
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+main {
+  padding-top: 6em;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 210px;
+}
+header {
+  padding: 0.5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  color: black;
+  width: 100vw;
+}
+
+footer {
+  background-color: black;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+
+  left: 0;
+}
+#score {
+  margin: 2%;
+}
+
+#bourd {
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 33.33333% 33.33333% 33.33333%;
+  grid-template-rows: 33.33333% 33.33333% 33.33333%;
+  max-width: 260px;
+}
+.cell {
+  border: solid 2px black;
+  display: flex;
+  width: 7vw;
+  height: 6vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 5em;
+  cursor: pointer;
+  padding: 25%;
+}
+
+.two,
+.one,
+.three {
+  border-top: none;
+  border-bottom: none;
+}
+.eight,
+.seven,
+.nine {
+  border-bottom: none;
+  border-top: none;
+}
+.one,
+.four,
+.seven {
+  border-left: none;
+  border-right: none;
+}
+.three,
+.six,
+.nine {
+  border-right: none;
+  border-left: none;
+}
+@media only screen and (min-width: 700px) {
+  #bourd {
+    margin: 1% 30% 8% 35%;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 33.33333% 33.33333% 33.33333%;
+    grid-template-rows: 33.33333% 33.33333% 33.33333%;
+    max-width: 260px;
+  }
+  .cell {
+    padding: 25%;
+    justify-content: center;
+    align-items: center;
+    width: 6vw;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .cell {
+    width: 4.5vw;
+  }
+}
+@media only screen and (max-width: 700px) {
+  #bourd {
+    margin: 1% 10% 8% 10%;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 33.33333% 33.33333% 33.33333%;
+    grid-template-rows: 33.33333% 33.33333% 33.33333%;
+    max-width: 260px;
+    padding: 2%;
+  }
+  .cell {
+    padding: 40%;
+  }
+}
+button {
+  font-size: 2em;
+  max-width: 300px;
+  margin: 0 20% 2% 2%;
+  min-width: 200px;
+}
