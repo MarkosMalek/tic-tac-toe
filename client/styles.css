@@ -50,12 +50,13 @@ footer {
   display: grid;
   grid-template-columns: 33.33333% 33.33333% 33.33333%;
   grid-template-rows: 33.33333% 33.33333% 33.33333%;
-  max-width: 260px;
+  min-width: 210px;
+  max-width: 300px;
 }
 .cell {
   border: solid 2px black;
   display: flex;
-  width: 7vw;
+  width: 6vw;
   height: 6vh;
   justify-content: center;
   align-items: center;
@@ -96,7 +97,8 @@ footer {
     display: grid;
     grid-template-columns: 33.33333% 33.33333% 33.33333%;
     grid-template-rows: 33.33333% 33.33333% 33.33333%;
-    max-width: 260px;
+    max-width: 300px;
+    min-width: 210px;
   }
   .cell {
     padding: 25%;
@@ -112,13 +114,15 @@ footer {
 }
 @media only screen and (max-width: 700px) {
   #bourd {
-    margin: 1% 10% 8% 10%;
+    margin: 1% 5% 8% 10%;
     justify-content: center;
     align-items: center;
     display: grid;
     grid-template-columns: 33.33333% 33.33333% 33.33333%;
     grid-template-rows: 33.33333% 33.33333% 33.33333%;
-    max-width: 260px;
+    min-width: 210px;
+    max-width: 300px;
+
     padding: 2%;
   }
   .cell {
@@ -130,4 +134,5 @@ button {
   max-width: 300px;
   margin: 0 20% 2% 2%;
   min-width: 200px;
+  cursor: pointer;
 }
