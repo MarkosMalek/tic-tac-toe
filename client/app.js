@@ -17,20 +17,9 @@ for (let i = 0; i < cells.length; i++) {
   });
 }
 console.log(cells[0].firstChild);
-
 console.log();
 const resetBTN = document.getElementById("rematch");
 resetBTN.addEventListener("click", (e) => {
-  for (let i = 0; i < cells.length; i++) {
-    if (cells[0].firstChild && cells[1].firstChild && cells[2].firstChild) {
-      if (
-        cells[0].firstChild == cells[1].firstChild &&
-        cells[1].firstChild == cells[2].firstChild
-      ) {
-        console.log(true);
-      }
-    }
-    console.log(cells[i].firstChild);
-    tern = "X";
-  }
+  console.log(cells[i].firstChild);
+  tern = "X";
 });
