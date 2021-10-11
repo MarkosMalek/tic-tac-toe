@@ -5,6 +5,7 @@
 body {
   background-color: #1976d2;
   color: white;
+  font-family: "Roboto Condensed", sans-serif;
 }
 header {
   background-color: #0d47a1;
@@ -12,18 +13,22 @@ header {
   color: white;
 }
 main {
-  padding: 2%;
-  margin: 3%;
+  padding: 2% 17% 2% 8%;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 800px;
 }
-
+#turn {
+  font-size: 42px;
+}
 footer {
   background-color: #1565c0;
   position: absolute;
   bottom: 0;
   width: 96%;
+  max-height: 20px;
   display: flex;
   color: white;
   justify-content: space-between;
@@ -45,30 +50,77 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
-#score {
+.scoreBar {
   padding: 2%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 2%;
 }
-@media only screen and (max-width: 370px) {
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (max-width: 720px) {
+  #app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  header {
+    align-items: stretch;
+    justify-content: start;
+  }
   .cell {
     width: 70px;
     height: 70px;
     font: 5em serif;
   }
-  #score {
-    margin-bottom: 10%;
+  .scoreBar {
+    display: flex;
+    flex-direction: column;
+  }
+  .score {
+    display: block;
+    margin-top: 10%;
+    left: 0;
+  }
+  #BEST {
+    margin-top: 5%;
+  }
+  main {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: auto auto;
+  }
+  #turn {
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+  }
+  #bourd {
+    max-width: 210px;
+    margin: 0 auto;
+    margin-top: 20%;
   }
 }
 button {
   background-color: #4caf50; /* Green */
   border: none;
   color: white;
-  padding: 3px 4px;
+  padding: 3px 14px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+button:hover {
+  background-color: #4caf50; /* Green */
+  color: white;
 }

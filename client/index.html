@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+      rel="stylesheet"
+    />
     <link href="./styles.css" rel="stylesheet" />
     <title>Tic Tac Toe</title>
   </head>
@@ -12,11 +18,21 @@
       <header>
         <h1>Wellcome</h1>
       </header>
-      <div id="score">
-        <h2>Best score is :</h2>
-        <button>start Game</button>
+      <div class="scoreBar">
+        <div class="truns">
+          <button id="startX">start with X</button>
+          <button id="startO">start with O</button>
+          <button id="rematch">new match</button>
+        </div>
+        <div class="score">
+          <h2>Best Score</h2>
+          <p id="BEST">-</p>
+        </div>
       </div>
       <main>
+        <div>
+          <p id="turn">Choose A player</p>
+        </div>
         <div id="bourd">
           <div class="one cell"></div>
           <div class="two cell"></div>
@@ -31,9 +47,8 @@
       </main>
       <footer>
         <p>@Markos-Malek</p>
-        <button id="rematch">new match</button>
       </footer>
     </div>
-    <script src="./app.js"></script>
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>
