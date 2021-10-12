@@ -11,11 +11,15 @@ for (let i = 0; i < cells.length; i++) {
       newGame.aMove(i);
       cells[i].innerHTML = newGame.turn;
       newGame.nextTurn();
-      console.log(newGame.bourd);
+      turnP.innerHTML = `It's ${newGame.turn} turn`;
     }
   });
 }
-
+if (newGame.iswin) {
+  turnP.innerHTML = `${newGame.turn} Wins`;
+} else if (newGame.isDrow) {
+  turnP.innerHTML = `It's a Drow`;
+}
 const startXBTN = document.getElementById("startX");
 startXBTN.addEventListener("click", (e) => {
   newGame.turn = "X";
