@@ -19,12 +19,35 @@ export default class Game {
     this.iswin = false;
     this.isDrow = false;
   }
-  /* reset() {
-    this.turn = "X";
-    this.bourd.fill(null);
+  initGame(cells, turnP) {
+    for (let i = 0; i < cells.length; i++) {
+      cells[i].addEventListener("click", (e) => {
+        e.preventDefault();
+        if (!cells[i].innerHTML && !this.iswin && !this.isDrow) {
+          this.aMove(i);
+          cells[i].innerHTML = this.turn;
+          if (this.iswin) {
+            turnP.innerHTML = `"${this.turn}" Wins`;
+          } else if (this.isDrow) {
+            turnP.innerHTML = `It's a Drow`;
+          } else {
+            this.nextTurn();
+            turnP.innerHTML = `It's "${this.turn}" turn`;
+          }
+        }
+      });
+    }
+  }
+  resetGame(cells, turnP) {
+    this.bourd.forEach((e) => (e = null));
     this.iswin = false;
     this.isDrow = false;
-  }*/
+    this.turn = "X";
+    turnP.innerHTML = `It's "${this.turn}" turn`;
+    for (const cell of cells) {
+      cell.innerHTML = null;
+    }
+  }
   nextTurn() {
     if (this.turn == "X") {
       this.turn = "O";
