@@ -4,7 +4,7 @@ what do the game need in functionality
   2.represent each cell //done//
   3.update each cell  //done// 
   4.wins and drows //done//
-  5.new game
+  5.new game //done//
   6.score
 extra fetures
   7.sign in and backend keep of the score
@@ -18,14 +18,16 @@ export default class Game {
     this.bourd = new Array(9).fill(null);
     this.iswin = false;
     this.isDrow = false;
+    this.score = 0;
   }
   initGame(cells, turnP) {
-    for (let i = 0; i < cells.length; i++) {
+    for (let i = 0; i < 9; i++) {
       cells[i].addEventListener("click", (e) => {
         e.preventDefault();
         if (!cells[i].innerHTML && !this.iswin && !this.isDrow) {
           this.aMove(i);
-          cells[i].innerHTML = this.turn;
+          cells[i].innerHTML = this.bourd[i];
+          //who wins or is it a drow ?
           if (this.iswin) {
             turnP.innerHTML = `"${this.turn}" Wins`;
           } else if (this.isDrow) {
@@ -42,6 +44,13 @@ export default class Game {
     this.bourd.forEach((e) => (e = null));
     this.iswin = false;
     this.isDrow = false;
+    //in the future score will come from the backend
+    /*
+    //elcode da feh moshkla msh 3arf ehh kol ma b reset el game
+    if (this.turn == "X") {
+      this.score++;
+    } else this.score--;
+    */
     this.turn = "X";
     turnP.innerHTML = `It's "${this.turn}" turn`;
     for (const cell of cells) {

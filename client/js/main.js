@@ -21,5 +21,9 @@ const restartBTN = document.getElementById("rematch");
 restartBTN.addEventListener("click", (e) => {
   e.preventDefault();
   newGame.resetGame(cells, turnP);
-  newGame.initGame(cells, turnP);
+  /*
+    document.getElementById("BEST").innerHTML = `"X" score : ${
+    newGame.score
+  }\n "O" score : ${newGame.score * -1}`;
+  */
 });
