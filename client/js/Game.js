@@ -18,7 +18,8 @@ export default class Game {
     this.bourd = new Array(9).fill(null);
     this.iswin = false;
     this.isDrow = false;
-    this.score = 0;
+    this.winner = null;
+    this.score = { X: 0, O: 0 };
   }
   initGame(cells, turnP) {
     for (let i = 0; i < 9; i++) {
@@ -41,7 +42,7 @@ export default class Game {
     }
   }
   resetGame(cells, turnP) {
-    this.bourd.forEach((e) => (e = null));
+    this.bourd = Array(9).fill(null);
     this.iswin = false;
     this.isDrow = false;
     //in the future score will come from the backend
@@ -103,9 +104,11 @@ export default class Game {
         this.bourd[b] === this.bourd[c]
       ) {
         this.iswin = true;
+        console.log(this.bourd);
         break;
-      } else if (this.bourd.indexOf(null) < 0) {
+      } else if (this.bourd.indexOf(null) < 0 && !this.iswin) {
         this.isDrow = true;
+        console.log(this.bourd);
         break;
       }
     }
